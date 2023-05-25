@@ -1,0 +1,40 @@
+// Para criar a aplicacao
+dotnet new webapi -o <nomeApi>
+
+// Para confiar nas paginas https em desenvolvimento (apertar sim na caixa de dialogo que aparece)
+dotnet dev-certs https --trust
+
+// Para rodar a plicacao (watch eh opcional, ele vai automaticamente atualizar as alteracoes feitas na VIEW)
+dotnet [watch] run
+
+// Para funcionar vc tem que colocar "/swagger" depois da porta
+https://localhost:7013/swagger
+
+//Para mudar para a API que vc quiser, abre o arquivo "launchSettings.json" na pasta Properties e altera onde ta escrito swagger para a api que quiser.
+
+// Depois de criar um novo Model, verifica se o codegenerator esta instalado
+dotnet tool install -g dotnet-aspnet-codegenerator --version 6.0.0
+
+// Verifica tbm se o emtity framework ja esta instalado
+dotnet tool install -g dotnet-ef --version 6.0.0
+
+// Biblioteca que gera os codigos necessarios para o scaffolding
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 6.0.0
+
+// Biblioteca que permite que possamos acessar o banco de dados
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.0
+
+// Biblioteca do SQLServer (importa pq tem algumas rotinas do codegenerator que usam)
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0
+
+// Biblioteca do SQLite (BD principal --> o que vai ser realmente usado)
+dotnet add package Microsoft.EntityFrameworkCore.SQLite --version 6.0.0
+
+// Gera um controller assincrono para uma api do model <nomeModel> para um data context <nomeNovoDataContext> outDir(? nao sei pra que serve) usando sqlite
+dotnet aspnet-codegenerator controller -name CarrosController -async -api -m Carro -dc VrumApiContext -outDir Controllers -sqlite
+
+// Cria o primeiro Migration
+dotnet ef migrations add InitialCreate
+
+// Salva/cria os dados no banco
+dotnet ef database update

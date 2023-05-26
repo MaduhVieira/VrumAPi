@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rO9t9ANUjbPfV7lCsBZIjrx/FmvhyZtZjkPH6Tp4UO7qrVvjh9g6NiwRtb0UDxUrvaZ/jy24EpD3i+VGUEF+9g==",
+  "dgSpecHash": "AzAu09ySYgV2bheL65cmevWtmpGr6EW+fUm+yfW3euLBT8/NRkH0scHNfuM23KI7Uz2zCEXm3+f/LBbH91hP6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Laboratorio\\VrumApi\\VrumApi.csproj",
+  "projectFilePath": "C:\\Users\\Laboratorio\\Downloads\\VrumApi-master\\VrumApi\\VrumApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Laboratorio\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Laboratorio\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

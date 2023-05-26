@@ -10553,11 +10553,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Laboratorio\\VrumApi\\VrumApi.csproj",
+      "projectUniqueName": "C:\\Users\\Laboratorio\\Downloads\\VrumApi-master\\VrumApi\\VrumApi.csproj",
       "projectName": "VrumApi",
-      "projectPath": "C:\\Users\\Laboratorio\\VrumApi\\VrumApi.csproj",
+      "projectPath": "C:\\Users\\Laboratorio\\Downloads\\VrumApi-master\\VrumApi\\VrumApi.csproj",
       "packagesPath": "C:\\Users\\Laboratorio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Laboratorio\\VrumApi\\obj\\",
+      "outputPath": "C:\\Users\\Laboratorio\\Downloads\\VrumApi-master\\VrumApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

@@ -22,14 +22,16 @@ namespace VrumApi.Controllers
 
         // GET: api/Carros
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Carro>>> GetCarro()
+        public async Task<ActionResult<IEnumerable<CarroDTO>>> GetCarro()
         {
-            return await _context.Carro.ToListAsync();
+            return await _context.Carro
+            .Select(x => CarroToDTO(x))
+            .ToListAsync();
         }
 
         // GET: api/Carros/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Carro>> GetCarro(int id)
+        public async Task<ActionResult<CarroDTO>> GetCarro(int id)
         {
             var carro = await _context.Carro.FindAsync(id);
 
@@ -38,7 +40,7 @@ namespace VrumApi.Controllers
                 return NotFound();
             }
 
-            return carro;
+            return CarroToDTO(carro);
         }
 
         // PUT: api/Carros/5
@@ -103,5 +105,17 @@ namespace VrumApi.Controllers
         {
             return _context.Carro.Any(e => e.Id == id);
         }
+
+        private static CarroDTO CarroToDTO(Carro carro)=>
+            new CarroDTO
+            {
+                Id = carro.Id,
+                Marca = carro.Marca,
+                Modelo = carro.Modelo,
+                Ano = carro.Ano,
+                Placa = carro.Placa,
+                Tipo = carro.Tipo,
+                Idade = carro.CalculaIdade()
+            };
     }
 }
